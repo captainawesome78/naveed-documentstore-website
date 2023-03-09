@@ -16,9 +16,13 @@
       <p class="test-center lead" >Store your most important documents online with our new, safe and easily accessible interface. We have great support and most importantly it is easy and free!
       </p>
       <h2 class= "text-center mt-2">What you can store</h2>
-      <p class= "text-center">Storage types here</p>
+      <div>
+        {% for upload in uploads %}
+          {% include 'jobitem.html' %}
+        {% endfor %}
+      </div>
       <div class="text-center">
-      <button class="btn btn-primary btn-lg">Contact</button>
+      <button class="btn btn-primary btn-lg mt-4">Contact</button>
         <p class= "text-center mt-4"> Copyright Naveed 2023</p>
       </div>
     </div>
