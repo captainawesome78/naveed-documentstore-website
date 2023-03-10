@@ -9,9 +9,10 @@
     
   </head>
   <body>
+    {% include 'nav.html' %}
     <div class="container">
-      <h1 class= "text-center mt-2 mb-4"> Naveed Docustore </h1>
-      <img class="img-fluid" id="banner" scr="https://naveed-documentstore-website.captainawesome7.repl.co/static/banner.jpeg">
+      <h1 class= "text-center mt-2 mb-4"> Naveed Docustore </h1 >
+      <img class="img-fluid" id="banner" scr="/static/banner.jpeg">
       <h2 class= "text-center">About</h2>
       <p class="test-center lead" >Store your most important documents online with our new, safe and easily accessible interface. We have great support and most importantly it is easy and free!
       </p>
@@ -22,10 +23,10 @@
         {% endfor %}
       </div>
       <div class="text-center">
-      <button class="btn btn-primary btn-lg mt-4">Contact</button>
-        <p class= "text-center mt-4"> Copyright Naveed 2023</p>
+      <a class="btn btn-primary btn-lg mt-4" href="mailto:hello@naveed.com?subject=Need%20more%20info&body=Hello%20there!%0D%0A%0D%0AI%20want%20to%20connect%20for%20more%20info%20on%20the%20various%20amazing%20services%20you%20have." >Contact</a>
       </div>
     </div>
+    {% include 'footer.html' %}
   </body>
   
 </html>
