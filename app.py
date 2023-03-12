@@ -1,31 +1,31 @@
 from flask import Flask, render_template, jsonify
-from database import load_jobs_from_db
+from database import load_jobs_from_db, load_job_from_db
 
 
 app = Flask(__name__)
 
-# UPLOADS = [
-#   {
-#     'id' : 1,
-#     'title' : 'Resume',
-#     'price' : 'Free',
-#     'uploads' : 'Unlimited'
+UPLOADS = [
+  {
+    'id' : 1,
+    'title' : 'Resume',
+    'price' : 'Free',
+    'uploads' : 'Unlimited'
     
-#   },
-#   {
-#     'id' : 2,
-#     'title' : 'Certificates',
-#     'price' : 'Free',
-#     'uploads' : 'Unlimited'
-#   },
-#   {
-#     'id' : 3,
-#     'title' : 'Recognitions',
-#     'price' : 'Free',
-#     'uploads' : 'Unlimited'
-#   }
+  },
+  {
+    'id' : 2,
+    'title' : 'Certificates',
+    'price' : 'Free',
+    'uploads' : 'Unlimited'
+  },
+  {
+    'id' : 3,
+    'title' : 'Recognitions',
+    'price' : 'Free',
+    'uploads' : 'Unlimited'
+  }
 
-# ]
+]
 
 
 @app.route("/")
@@ -38,6 +38,14 @@ def bismillah():
 def list_uploads():
   jobs = load_jobs_from_db()
   return jsonify(UPLOADS)
+
+@app.route("/upload/<int:id>")
+def show_upload(id):
+  upload = load_job_from_db(id)
+  if not upload:
+    return "Not Found", 404
+  else:
+    return render_template('uploadpage.html', upload=upload)
   
 
 if __name__ == "__main__":
