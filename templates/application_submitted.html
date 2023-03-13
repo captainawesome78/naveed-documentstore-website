@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Upload Successfull!</title>
+    {% include 'bootstrap.html' %}
+    <link rel="icon" type="image/x-icon" href="https://naveed-documentstore-website.captainawesome7.repl.co/static/favicon.ico">
+  </head>
+  <body>
+    {% include 'nav.html' %}
+    <div class="container">
+      <h4 class= "text-center mt-2 mb-4">Your Upload of {{upload['title']}} is Successfull!</h4>
+      <div class="text-center">
+        <a href = "/" type="button" class = "btn btn-outline-primary">Upload More!</a>
+      </div>
+    </div>
+
+
+    {% include 'footer.html' %}
+  </body>
